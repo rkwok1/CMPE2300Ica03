@@ -66,9 +66,14 @@ namespace CMPE2300Ica03
                     }
                 }
             }
+ 
             foreach (Ball item in listyMiddle)
             {
                 listyBalls1.Remove(item); //remove balls that have touched
+            }
+            foreach(Ball item in listyMiddle)
+            {
+                listyBalls2.Add(item);
             }
             //Clear lef drawer and move the balls and render the left drawer
             canvas1.Clear();

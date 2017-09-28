@@ -34,6 +34,7 @@
             // 
             // UI_timer
             // 
+            this.UI_timer.Enabled = true;
             this.UI_timer.Interval = 50;
             this.UI_timer.Tick += new System.EventHandler(this.UI_timer_Tick);
             // 

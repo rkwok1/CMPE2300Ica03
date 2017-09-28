@@ -61,9 +61,9 @@ namespace CMPE2300Ica03
 
             //Checking ball is within boundaries
             direction.X = position.X + radius > 400 ? -direction.X : direction.X; //If greater 400 for x position, switch sign for direction
-            direction.X = position.X + radius < 0 ? direction.X : -direction.X;
-            direction.Y = position.Y + radius> 600 ? -direction.Y : direction.Y;
-            direction.Y = position.Y + radius < 0 ? direction.Y : -direction.Y;
+            direction.X = position.X - radius < 0 ? -direction.X : +direction.X;
+            direction.Y = position.Y + radius > 600 ? -direction.Y : direction.Y;
+            direction.Y = position.Y - radius < 0 ? -direction.Y : direction.Y;
 
             //may need a line here
         }
