@@ -78,7 +78,15 @@ namespace CMPE2300Ica03
             //makes a copy ball if we need to manipulate it
             Ball copyBall = (Ball)obj;
 
+            return (GetDistance(this, copyBall) < (radius) + (copyBall.radius)); //Returns true if balls overlap.
         }
+
+        //Get Hash code ovveride must be present after overriding equals
+        public override int GetHashCode()
+        {
+            return 1;
+        }
+
 
 
 
