@@ -79,12 +79,12 @@ namespace CMPE2300Ica03
             if (highlightFlag)
             {
                 canvas.AddCenteredEllipse(new Point((int)position.X, (int)position.Y), (int)radius * 2, (int)radius * 2, Color.Yellow, 1, Color.White);
-                canvas.AddText(equalCalls.ToString(), 5, (int)position.X, (int)position.Y, 30 ,30, Color.Black);
+                canvas.AddText(equalCalls.ToString(), 10, (int)position.X -10, (int)position.Y -5, 20, 10, Color.Black);
             }
             else
             {
                 canvas.AddCenteredEllipse(new Point((int)position.X, (int)position.Y), (int)radius * 2, (int)radius * 2, Color.DarkCyan, 1, Color.White);
-                canvas.AddText(equalCalls.ToString(), 10, (int)position.X, (int)position.Y, (int)radius * 2, (int)radius * 2, Color.Black);
+                canvas.AddText(equalCalls.ToString(), 10, (int)position.X -10, (int)position.Y -5, 20, 10, Color.Black);
             }
         }
 
