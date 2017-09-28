@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CMPE2300Ica03
 {
-    public partial class Form1 : Form
+    public partial class MyFirstEquals : Form
     {
-        public Form1()
+        public MyFirstEquals()
         {
             InitializeComponent();
         }
