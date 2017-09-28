@@ -1,0 +1,10 @@
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\bin\Debug\CMPE2300Ica03.exe.config
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\bin\Debug\CMPE2300Ica03.exe
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\bin\Debug\CMPE2300Ica03.pdb
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\bin\Debug\GDIDrawer.dll
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\Debug\CMPE2300Ica03.csprojResolveAssemblyReference.cache
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\Debug\CMPE2300Ica03.MyFirstEquals.resources
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\Debug\CMPE2300Ica03.Properties.Resources.resources
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\Debug\CMPE2300Ica03.csproj.GenerateResource.Cache
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\Debug\CMPE2300Ica03.exe
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\Debug\CMPE2300Ica03.pdb

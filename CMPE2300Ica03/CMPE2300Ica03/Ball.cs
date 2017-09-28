@@ -79,11 +79,13 @@ namespace CMPE2300Ica03
             if (highlightFlag)
             {
                 canvas.AddCenteredEllipse(new Point((int)position.X, (int)position.Y), (int)radius * 2, (int)radius * 2, Color.Yellow, 1, Color.White);
-                canvas.AddText(equalCalls.ToString(), 10,(int)position.X, (int)position.Y,(int)radius *2,(int)radius *2, Color.Black);
+                canvas.AddText(equalCalls.ToString(), 10, (int)position.X, (int)position.Y, (int)radius * 2, (int)radius * 2, Color.Black);
             }
             else
+            {
                 canvas.AddCenteredEllipse(new Point((int)position.X, (int)position.Y), (int)radius * 2, (int)radius * 2, Color.DarkCyan, 1, Color.White);
-            canvas.AddText(equalCalls.ToString(), 10, (int)position.X, (int)position.Y, (int)radius * 2, (int)radius * 2, Color.Black);
+                canvas.AddText(equalCalls.ToString(), 10, (int)position.X, (int)position.Y, (int)radius * 2, (int)radius * 2, Color.Black);
+            }
         }
 
         /**********************************Override*******************************/
@@ -99,7 +101,7 @@ namespace CMPE2300Ica03
             if (GetDistance(this, copyBall) < (radius) + (copyBall.radius))
             {
                 equalCalls++;
-                return true; //Returns true if balls overlap. }
+                return true; //Returns true if balls overlap.
 
             }
             else
