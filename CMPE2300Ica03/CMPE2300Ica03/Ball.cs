@@ -60,12 +60,12 @@ namespace CMPE2300Ica03
             position.Y = position.Y + direction.Y;
 
             //Checking ball is within boundaries
-            direction.X = position.X > 400 ? -direction.X : direction.X; //If greater 400 for x position, switch sign for direction
-            direction.X = position.X < 0 ? direction.X : -direction.X;
-            direction.Y = position.Y > 600 ? -direction.Y : direction.Y;
-            direction.Y = position.Y < 0 ? direction.Y : -direction.Y;
+            direction.X = position.X + radius > 400 ? -direction.X : direction.X; //If greater 400 for x position, switch sign for direction
+            direction.X = position.X + radius < 0 ? direction.X : -direction.X;
+            direction.Y = position.Y + radius> 600 ? -direction.Y : direction.Y;
+            direction.Y = position.Y + radius < 0 ? direction.Y : -direction.Y;
 
-
+            //may need a line here
         }
 
         /***************************************************************************
@@ -101,12 +101,15 @@ namespace CMPE2300Ica03
             if (GetDistance(this, copyBall) < (radius) + (copyBall.radius))
             {
                 equalCalls++;
+                highlightFlag = true;
                 return true; //Returns true if balls overlap.
 
             }
             else
+            {
+                highlightFlag = false;
                 return false;
-                
+            }
             
         }
 

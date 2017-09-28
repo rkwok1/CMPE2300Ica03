@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.UI_timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // UI_timer
+            // 
+            this.UI_timer.Interval = 50;
+            this.UI_timer.Tick += new System.EventHandler(this.UI_timer_Tick);
             // 
             // MyFirstEquals
             // 
@@ -42,6 +49,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer UI_timer;
     }
 }
 

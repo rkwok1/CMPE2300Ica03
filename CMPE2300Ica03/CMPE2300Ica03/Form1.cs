@@ -34,11 +34,49 @@ namespace CMPE2300Ica03
         /**********************MouseClickSubscriptions***************************/
         private void Canvas1_MouseLeftClick(Point pos, CDrawer dr)
         {
-            listyBalls1.Add(new Ball((PointF)pos,rnd.NextDouble() * 10 -5), (int)rnd.Next(20-50))));
+            PointF holder = new PointF((float)(rnd.NextDouble() * 10 - 5), (float)(rnd.NextDouble() * 10 - 5));
+            listyBalls1.Add(new Ball(pos, holder, rnd.Next(20-50)));
+
         }
         private void Canvas2_MouseLeftClick(Point pos, CDrawer dr)
         {
-            
+            PointF holder = new PointF((float)(rnd.NextDouble() * 10 - 5), (float)(rnd.NextDouble() * 10 - 5));
+            listyBalls2.Add(new Ball(pos, holder, rnd.Next(20 - 50)));
         }
+
+        private void UI_timer_Tick(object sender, EventArgs e)
+        {
+            List<Ball> listyMiddle = new List<Ball>();
+            //Move function for left drawer
+            foreach (Ball ball in listyBalls1)
+            {
+                ball.Move();
+            }
+            //Compares all balls in a list in left window
+            foreach (Ball A in listyBalls1)
+            {
+                foreach (Ball B in listyBalls1)
+                {
+                    if (!(Ball.ReferenceEquals(A, B))) //Do NOT Compare to self
+                    {
+                        if (A.Equals(B)) //If the balls overlap then add to a temporary list 
+                        {
+                            listyMiddle.Add(A);
+                        }
+                    }
+                }
+            }
+            foreach (Ball item in listyMiddle)
+            {
+                listyBalls1.Remove(item); //remove balls that have touched
+            }
+            canvas1.Clear();
+            foreach (Ball ball in listyBalls1)
+            {
+                ball.Move();
+            }
+            canvas1.Render();
+        }
+
     }
 }
