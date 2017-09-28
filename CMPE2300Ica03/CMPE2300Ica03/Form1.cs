@@ -34,7 +34,7 @@ namespace CMPE2300Ica03
         /**********************MouseClickSubscriptions***************************/
         private void Canvas1_MouseLeftClick(Point pos, CDrawer dr)
         {
-            
+            listyBalls1.Add(new Ball((PointF)pos,rnd.NextDouble() * 10 -5), (int)rnd.Next(20-50))));
         }
         private void Canvas2_MouseLeftClick(Point pos, CDrawer dr)
         {
