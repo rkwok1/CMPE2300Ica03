@@ -68,6 +68,20 @@ namespace CMPE2300Ica03
 
         }
 
+        /***************************************************************************
+         * Method: Render()
+         * Description: Accepts a CDrawer object reference and will render a ball.
+         *              Wil make it yellow if highlighted. Otherwise make it dark
+         *              cyan.
+         ***************************************************************************/
+         public void Render(CDrawer canvas)
+        {
+            if(highlightFlag)
+                canvas.AddCenteredEllipse(new Point((int)position.X, (int)position.Y), (int)radius * 2, (int)radius * 2, Color.Yellow, 1, Color.White);
+            else
+                canvas.AddCenteredEllipse(new Point((int)position.X, (int)position.Y), (int)radius * 2, (int)radius * 2, Color.DarkCyan, 1, Color.White);
+        }
+
         /**********************************Override*******************************/
         public override bool Equals(object obj)
         {
@@ -78,7 +92,16 @@ namespace CMPE2300Ica03
             //makes a copy ball if we need to manipulate it
             Ball copyBall = (Ball)obj;
 
-            return (GetDistance(this, copyBall) < (radius) + (copyBall.radius)); //Returns true if balls overlap.
+            if (GetDistance(this, copyBall) < (radius) + (copyBall.radius))
+            {
+                equalCalls++;
+                return true; //Returns true if balls overlap. }
+
+            }
+            else
+                return false;
+                
+            
         }
 
         //Get Hash code ovveride must be present after overriding equals
