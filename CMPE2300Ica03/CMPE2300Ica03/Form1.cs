@@ -35,13 +35,13 @@ namespace CMPE2300Ica03
         private void Canvas1_MouseLeftClick(Point pos, CDrawer dr)
         {
             PointF holder = new PointF((float)(rnd.NextDouble() * 10 - 5), (float)(rnd.NextDouble() * 10 - 5));
-            listyBalls1.Add(new Ball(pos, holder, rnd.Next(20-50)));
+            listyBalls1.Add(new Ball(pos, holder, rnd.Next(20,51)));
 
         }
         private void Canvas2_MouseLeftClick(Point pos, CDrawer dr)
         {
             PointF holder = new PointF((float)(rnd.NextDouble() * 10 - 5), (float)(rnd.NextDouble() * 10 - 5));
-            listyBalls2.Add(new Ball(pos, holder, rnd.Next(20 - 50)));
+            listyBalls2.Add(new Ball(pos, holder, rnd.Next(20, 51)));
         }
 
         private void UI_timer_Tick(object sender, EventArgs e)
@@ -70,12 +70,39 @@ namespace CMPE2300Ica03
             {
                 listyBalls1.Remove(item); //remove balls that have touched
             }
+            //Clear lef drawer and move the balls and render the left drawer
             canvas1.Clear();
             foreach (Ball ball in listyBalls1)
             {
-                ball.Move();
+                ball.Render(canvas1);
             }
             canvas1.Render();
+            //Move the right list
+            foreach (Ball item in listyBalls2)
+            {
+                item.Move();
+                item.highlightFlag = false;
+                foreach (Ball b1 in listyBalls2)
+                {
+                    foreach (Ball b2 in listyBalls2)
+                    {
+                        if (!(Ball.ReferenceEquals(b1, b2)))
+                        {
+                            if (b1.Equals(b2))
+                            {
+                                b1.highlightFlag = true;
+                            }
+                        }
+                    }
+                }
+            }
+
+            canvas2.Clear();
+            foreach (Ball ball in listyBalls2)
+            {
+                ball.Render(canvas2);
+            }
+            canvas2.Render();
         }
 
     }

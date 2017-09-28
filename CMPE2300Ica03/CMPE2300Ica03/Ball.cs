@@ -101,13 +101,11 @@ namespace CMPE2300Ica03
             if (GetDistance(this, copyBall) < (radius) + (copyBall.radius))
             {
                 equalCalls++;
-                highlightFlag = true;
                 return true; //Returns true if balls overlap.
 
             }
             else
             {
-                highlightFlag = false;
                 return false;
             }
             
