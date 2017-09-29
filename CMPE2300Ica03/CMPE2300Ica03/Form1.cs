@@ -35,13 +35,13 @@ namespace CMPE2300Ica03
         private void Canvas1_MouseLeftClick(Point pos, CDrawer dr)
         {
             PointF holder = new PointF((float)(rnd.NextDouble() * 10 - 5), (float)(rnd.NextDouble() * 10 - 5));
-            listyBalls1.Add(new Ball(pos, holder, rnd.Next(20,51)));
+            listyBalls1.Add(new Ball(pos, holder, rnd.Next(10,26)));
 
         }
         private void Canvas2_MouseLeftClick(Point pos, CDrawer dr)
         {
             PointF holder = new PointF((float)(rnd.NextDouble() * 10 - 5), (float)(rnd.NextDouble() * 10 - 5));
-            listyBalls2.Add(new Ball(pos, holder, rnd.Next(20, 51)));
+            listyBalls2.Add(new Ball(pos, holder, rnd.Next(10,26)));//diameter not radius wanted
         }
 
         private void UI_timer_Tick(object sender, EventArgs e)
