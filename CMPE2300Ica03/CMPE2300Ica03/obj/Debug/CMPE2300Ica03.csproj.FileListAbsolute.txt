@@ -8,3 +8,4 @@ C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\D
 C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\Debug\CMPE2300Ica03.csproj.GenerateResource.Cache
 C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\Debug\CMPE2300Ica03.exe
 C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\Debug\CMPE2300Ica03.pdb
+C:\Users\rkwok2\Documents\GitHub\CMPE2300Ica03\CMPE2300Ica03\CMPE2300Ica03\obj\Debug\CMPE2300Ica03.csproj.CoreCompileInputs.cache

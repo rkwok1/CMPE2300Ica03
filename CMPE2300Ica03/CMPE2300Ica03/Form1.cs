@@ -81,7 +81,9 @@ namespace CMPE2300Ica03
             {
                 ball.Render(canvas1);
             }
+            canvas1.AddText("Left Count: " + listyBalls1.Count, 15, 75, 550, 200, 30, Color.LawnGreen);
             canvas1.Render();
+            
             //Move the right list
             foreach (Ball item in listyBalls2)
             {
@@ -107,6 +109,7 @@ namespace CMPE2300Ica03
             {
                 ball.Render(canvas2);
             }
+            canvas2.AddText("Right Count: " + listyBalls2.Count, 15, 75, 550, 200, 30, Color.LawnGreen);
             canvas2.Render();
         }
 

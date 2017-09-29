@@ -60,11 +60,10 @@ namespace CMPE2300Ica03
             position.Y = position.Y + direction.Y;
 
             //Checking ball is within boundaries
-            direction.X = position.X + radius > 400 ? -direction.X : direction.X; //If greater 400 for x position, switch sign for direction
-            direction.X = position.X - radius < 0 ? -direction.X : +direction.X;
-            direction.Y = position.Y + radius > 600 ? -direction.Y : direction.Y;
-            direction.Y = position.Y - radius < 0 ? -direction.Y : direction.Y;
-
+            direction.X = position.X + radius >= 400 ? -direction.X : direction.X; //If greater 400 for x position, switch sign for direction
+            direction.X = position.X - radius <= 0 ? -direction.X : +direction.X;
+            direction.Y = position.Y + radius >= 600 ? -direction.Y : direction.Y;
+            direction.Y = position.Y - radius <= 0 ? -direction.Y : direction.Y;
             //may need a line here
         }
 
@@ -79,12 +78,12 @@ namespace CMPE2300Ica03
             if (highlightFlag)
             {
                 canvas.AddCenteredEllipse(new Point((int)position.X, (int)position.Y), (int)radius * 2, (int)radius * 2, Color.Yellow, 1, Color.White);
-                canvas.AddText(equalCalls.ToString(), 10, (int)position.X -10, (int)position.Y -5, 20, 10, Color.Black);
+                canvas.AddText(equalCalls.ToString(), 8, (int)position.X -10, (int)position.Y -5, 25, 10, Color.Black);
             }
             else
             {
                 canvas.AddCenteredEllipse(new Point((int)position.X, (int)position.Y), (int)radius * 2, (int)radius * 2, Color.DarkCyan, 1, Color.White);
-                canvas.AddText(equalCalls.ToString(), 10, (int)position.X -10, (int)position.Y -5, 20, 10, Color.Black);
+                canvas.AddText(equalCalls.ToString(), 8, (int)position.X -10, (int)position.Y -5, 25, 10, Color.Black);
             }
         }
 
