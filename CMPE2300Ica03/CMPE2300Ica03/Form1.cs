@@ -48,66 +48,77 @@ namespace CMPE2300Ica03
         {
             List<Ball> listyMiddle = new List<Ball>();
             //Move function for left drawer
-            foreach (Ball ball in listyBalls1)
+            lock (listyBalls1)
             {
-                ball.Move();
-            }
-            //Compares all balls in a list in left window
-            foreach (Ball A in listyBalls1)
-            {
-                foreach (Ball B in listyBalls1)
+                foreach (Ball ball in listyBalls1)
                 {
-                    if (!(Ball.ReferenceEquals(A, B))) //Do NOT Compare to self
-                    {
-                        if (A.Equals(B)) //If the balls overlap then add to a temporary list 
-                        {
-                            listyMiddle.Add(A);
-                        }
-                    }
+                    ball.Move();
                 }
-            }
- 
-            foreach (Ball item in listyMiddle)
-            {
-                listyBalls1.Remove(item); //remove balls that have touched
-            }
-            foreach(Ball item in listyMiddle)
-            {
-                listyBalls2.Add(item);
-            }
-            //Clear lef drawer and move the balls and render the left drawer
-            canvas1.Clear();
-            foreach (Ball ball in listyBalls1)
-            {
-                ball.Render(canvas1);
-            }
-            canvas1.AddText("Left Count: " + listyBalls1.Count, 15, 75, 550, 200, 30, Color.LawnGreen);
-            canvas1.Render();
-            
-            //Move the right list
-            foreach (Ball item in listyBalls2)
-            {
-                item.Move();
-                item.highlightFlag = false;
-                foreach (Ball b1 in listyBalls2)
+                //Compares all balls in a list in left window
+                foreach (Ball A in listyBalls1)
                 {
-                    foreach (Ball b2 in listyBalls2)
+                    foreach (Ball B in listyBalls1)
                     {
-                        if (!(Ball.ReferenceEquals(b1, b2)))
+                        if (!(Ball.ReferenceEquals(A, B))) //Do NOT Compare to self
                         {
-                            if (b1.Equals(b2))
+                            if (A.Equals(B)) //If the balls overlap then add to a temporary list 
                             {
-                                b1.highlightFlag = true;
+                                listyMiddle.Add(A);
                             }
                         }
                     }
                 }
             }
-
-            canvas2.Clear();
-            foreach (Ball ball in listyBalls2)
+            lock (listyMiddle)
             {
-                ball.Render(canvas2);
+                foreach (Ball item in listyMiddle)
+                {
+                    listyBalls1.Remove(item); //remove balls that have touched
+                }
+                foreach (Ball item in listyMiddle)
+                {
+                    listyBalls2.Add(item);
+                }
+            }
+            //Clear lef drawer and move the balls and render the left drawer
+            canvas1.Clear();
+            lock (listyBalls1)
+            {
+                foreach (Ball ball in listyBalls1)
+                {
+                    ball.Render(canvas1);
+                }
+            }
+            canvas1.AddText("Left Count: " + listyBalls1.Count, 15, 75, 550, 200, 30, Color.LawnGreen);
+            canvas1.Render();
+
+            //Move the right list
+            lock (listyBalls2)
+            {
+                foreach (Ball item in listyBalls2)
+                {
+                    item.Move();
+                    item.highlightFlag = false;
+                    foreach (Ball b1 in listyBalls2)
+                    {
+                        foreach (Ball b2 in listyBalls2)
+                        {
+                            if (!(Ball.ReferenceEquals(b1, b2)))
+                            {
+                                if (b1.Equals(b2))
+                                {
+                                    b1.highlightFlag = true;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                canvas2.Clear();
+                foreach (Ball ball in listyBalls2)
+                {
+                    ball.Render(canvas2);
+                }
             }
             canvas2.AddText("Right Count: " + listyBalls2.Count, 15, 75, 550, 200, 30, Color.LawnGreen);
             canvas2.Render();
